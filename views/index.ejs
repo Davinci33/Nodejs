@@ -1,0 +1,389 @@
+
+<% include ./supports/header%>
+
+  
+
+  
+ <div id="sidebar"> 
+   <div class='panel'> 
+
+<%if(userdata){%>
+
+   <div class="panel">
+    
+    <div class="header">
+      <span class="col_fade">个人信息</span>
+    </div>
+    <div class="inner">
+      <div class="user_card">
+  <div>
+    <a class="user_avatar" href="/users/settings">
+
+      <img src="/images/<%=userdata.usericon%>" title="Node.Davinci">
+    </a>
+    <span class="user_name"><a class="dark" href="/user/Mesea"><%=userdata.username%></a></span>
+
+    <div class="board clearfix">
+      <div class="floor">
+        <span class="big">积分: <%=userdata.golds%> </span>
+      </div>
+    </div>
+    <div class="space clearfix"></div>
+    <span class="signature">
+        “
+          <%=userdata.signature%>
+        ”
+    </span>
+  </div>
+</div>
+
+
+
+    </div>
+    
+  </div>
+  <div class="panel">
+    <div class="inner">
+      <a href="/topic/create" id="create_topic_btn">
+        <span class="span-success">发布话题</span>
+      </a>
+    </div>
+  </div>
+<%}else{%>
+
+    <div class='inner'>
+      <p>CNode：Node.js专业中文社区</p>
+
+      <div>
+        您可以
+        <a href='/users/login'>登录</a>
+        或
+        <a href='/users/reg'>注册</a>
+        , 也可以
+        <a href="/users/reg">
+          <span class="span-info">
+            通过 GitHub 登录
+          </span>
+        </a>
+      </div>
+    </div>
+
+<%}%>
+
+
+  </div>
+<div class='panel'>
+  <div class='inner ads'>
+
+    
+      
+      <a href="http://www.tingyun.com/tingyun_server.html" target="_blank" class="banner sponsor_outlink"
+    data-label="tingyun">
+        <img src="//dn-cnode.qbox.me/FvGk14CRylsdmV2OhA2J63mqdB6-">
+      </a>
+    
+      
+        <div class="sep10"></div>
+      
+      <a href="https://alinode.aliyun.com/?ref=cnode" target="_blank" class="banner sponsor_outlink"
+    data-label="alinode">
+        <img src="//dn-cnode.qbox.me/Fn4D6BhOTz1IswvmzeZ1q7QW1ls_">
+      </a>
+    
+      
+        <div class="sep10"></div>
+      
+      <a href="http://www.ucloud.cn/site/active/gift.html?utm_source=cnodejs&utm_medium=content_pic_pc&utm_campaign=multicloud&utm_content=gift&ytag=cnodejs" target="_blank" class="banner sponsor_outlink"
+    data-label="ucloud-banner">
+        <img src="//dn-cnode.qbox.me/FgQS-GQDfqwAD_v0NuhyYUOUk5MG">
+      </a>
+    
+  </div>
+</div>
+
+  
+
+  
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>无人回复的话题</span>
+    </div>
+    <div class='inner'>
+      
+      <ul class="unstyled">
+        <li>
+  <div><a class='dark topic_title' href="/topic/5996c7744e3c4e5a7021b1e9" title="请问这种微信小程序如何搞的？个人需要如何以公司资质申请吗？">请问这种微信小程序如何搞的？个人需要如何以公司资质申请吗？</a>
+  </div>
+</li>
+<li>
+  <div><a class='dark topic_title' href="/topic/5995a7abee602e88524b435e" title="redux compose 详解">redux compose 详解</a>
+  </div>
+</li>
+<li>
+  <div><a class='dark topic_title' href="/topic/599543c4f36051a45246c0f1" title="一个测试数据生成器--mocky">一个测试数据生成器--mocky</a>
+  </div>
+</li>
+<li>
+  <div><a class='dark topic_title' href="/topic/5995168c4e3c4e5a7021b177" title="现在搭建视频网站有什么好的框架或源码？最好是Express+ejs+mongodb">现在搭建视频网站有什么好的框架或源码？最好是Express+ejs+mongodb</a>
+  </div>
+</li>
+<li>
+  <div><a class='dark topic_title' href="/topic/5994e54cf36051a45246c0bf" title="使用ui框架怎么使用主题色变量">使用ui框架怎么使用主题色变量</a>
+  </div>
+</li>
+
+      </ul>
+      
+    </div>
+  </div>
+  
+
+  
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>积分榜</span>
+      &nbsp;
+      <a class='dark' href='/users/top100'>TOP 100 &gt;&gt;</a>
+    </div>
+    <div class='inner'>
+      
+      <ol>
+        <li>
+  <span class='top_score'>19440</span>
+  <span class="user_name"><a href="/user/i5ting">i5ting</a></span>
+</li>
+
+
+      </ol>
+      
+    </div>
+  </div>
+  
+
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>友情社区</span>
+    </div>
+    <div class='inner'>
+      <ol class="friendship-community">
+        <li>
+          <a href="https://ruby-china.org/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/ruby-china-20150529.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="http://golangtc.com/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/golangtc-logo.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="http://phphub.org/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/phphub-logo.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="https://testerhome.com/" target="_blank">
+            <img src="//dn-cnode.qbox.me/FjLUc7IJ2--DqS706etPQ1EGajxK">
+          </a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class='panel'>
+    <div class='header'>
+      <span class='col_fade'>客户端二维码</span>
+    </div>
+    <div class='inner cnode-app-download'>
+      <img width='200' src="//dn-cnode.qbox.me/FtG0YVgQ6iginiLpf9W4_ShjiLfU">
+      <br />
+      <a href="https://github.com/soliury/noder-react-native" target="_blank">客户端源码地址</a>
+    </div>
+  </div>
+
+</div>
+</div>
+
+
+
+<div id="content">
+  <div class="panel">
+    <div class="header">
+      
+        <a href="/index/?tab=all"
+          class="topic-tab current-tab">全部</a>
+        <a href="/index/?tab=share"
+          class="topic-tab ">分享</a>
+      
+        <a href="/index/?tab=ask"
+          class="topic-tab ">问答</a>
+      
+        <a href="/index/?tab=job"
+          class="topic-tab ">招聘</a>
+      
+        <a href="/index/?tab=dev"
+          class="topic-tab ">客户端测试</a>
+      
+    </div>
+    <div class="inner no-padding">
+      <div id="topic_list">
+
+
+  <%topicdata.forEach(function(item,index){%>
+  <div class='cell'>
+
+  <a class="user_avatar pull-left" href="/user/i5ting">
+    <img src="/images/<%=item.userId.usericon%>"
+         title="<%=item.userId.username%>"
+            />
+  </a>
+
+  <span class="reply_count pull-left">
+    <span class="count_of_replies" title="回复数">
+      <%=item.reply.length%>
+    </span>
+    <span class="count_seperator">/</span>
+    <span class="count_of_visits" title='点击数'>
+      <%=item.viewNum%>
+    </span>
+  </span>
+
+  
+  <a class='last_time pull-right' href="/topic/597edd7f8f0313ff0d08d97a#59919079ee602e88524b422e">
+    <img class="user_small_avatar" src="/images/<%=item.userId.usericon?item.userId.usericon:'nodeImg.jpg'%>">
+    <span class="last_active_time"><%=setTime(item.createAt)%></span>
+  </a>
+  
+  
+
+  <div class="topic_title_wrapper">
+   <a class='topic_title' href='/topic/<%=item._id%>' title='<%=topicdata.title%>'>
+      <%=item.title%>
+    </a>
+  </div>
+</div>
+<%})%>
+
+
+
+</div>
+
+
+
+
+
+
+
+<div class='pagination' current_page='1'>
+  <ul>
+  <%if(pageMax*1<=5){%>
+
+  <li class='aviabled'><a href='/index?tab=<%=query?query:"all"%>&amp;page=1'>«</a></li>
+
+  <%for(var i=1;i<=pageMax;i++){%>
+
+  <li class='disabled'><a href='/index/?tab=<%=query?query:"all"%>&amp;page=<%=i%>'><%=i%></a></li>
+  <%}%>
+  <li class='disabled'><a href='#'>»</a></li>
+<%}else{%>
+    <%if(page>3){%>
+    <li class='aviabled'><a href='/index?tab=<%=query?query:"all"%>&amp;page=1'>«</a></li>
+    <li><a>...</a></li>
+
+
+      <%var j = page+4;for(var i=page-1;i<j;i++){
+      if(i<2){
+      continue;
+      }
+      if(pageMax<j){
+      j=pageMax;
+      }
+
+      %>
+
+   <li class='disabled'><a href='/index/?tab=<%=query?query:"all"%>&amp;page=<%=i%>'><%=i%></a></li>
+
+
+<%}%>
+
+    
+     
+<%}else{%>
+    <li class='disabled'><a href='#'>1</a></li>
+    <li><a href='/index/?tab=<%=query?query:"all"%>&amp;page=2'>2</a></li>
+    <li><a href='/index/?tab=<%=query?query:"all"%>&amp;page=3'>3</a></li>
+    <li><a href='/index/?tab=<%=query?query:"all"%>&amp;page=4'>4</a></li>
+    <li><a href='/index/?tab=<%=query?query:"all"%>l&amp;page=5'>5</a></li>
+  <%}%> 
+
+    <%if(page<pageMax*1-4){%>
+
+     <li><a>...</a></li>
+    <li><a href='/index/?tab=<%=query?query:"all"%>&amp;page=<%=pageMax%>'>»</a></li>
+    <%}else if(page=pageMax){%>
+    <li><a href='/index/?tab=<%=query?query:"all"%>&amp;page=<%=pageMax%>'>»</a></li>
+    <%}else{%>
+        <li class='disabled'><a href='#'>»</a></li>
+        <%}%>
+
+        <%}%>
+  </ul>
+</div>
+
+
+    </div>
+    
+  </div>
+</div>
+
+</div>
+<div id='backtotop'>回到顶部</div>
+<div id='footer'>
+  <div id='footer_main'>
+    <div class="links">
+      <a class='dark' href='/rss'>RSS</a>
+      |
+      <a class='dark' href='https://github.com/cnodejs/nodeclub/'>源码地址</a>
+    </div>
+
+    <div class='col_fade'>
+
+  <p>CNode 社区为国内最专业的 Node.js 开源技术社区，致力于 Node.js 的技术研究。</p>
+  <p>服务器赞助商为
+    <a href="http://www.ucloud.cn/?utm_source=zanzhu&utm_campaign=cnodejs&utm_medium=display&utm_content=yejiao&ytag=cnodejs_logo" target="_blank"
+      class="sponsor_outlink" data-label="ucloud_bottom">
+      <img src="//dn-cnode.qbox.me/FuIpEaM9bvsZKnQ3QfPtBHWQmLM9" title="ucloud"
+      alt="ucloud" width="92px"/>
+    </a>
+  ，存储赞助商为
+    <a href="http://www.qiniu.com/?ref=cnode" target="_blank"
+      class="sponsor_outlink" data-label="qiniu_bottom">
+      <img src="//dn-cnode.qbox.me/Fg0jtDIcTqVC049oVu5-sn6Om4NX" title="七牛云存储"
+      alt="七牛云存储" width="115px"/>
+    </a>
+  ，由<a href="https://alinode.aliyun.com/?ref=cnode" target="_blank"
+      class="sponsor_outlink" data-label="alinode_bottom">
+      <img src="//dn-cnode.qbox.me/FpMZk31PDyxkC8yStmMQL4XroaGD" title="alinode"
+      alt="alinode" height="54px" width="166px"/>
+    </a>提供应用性能服务。
+  </p>
+  <p>新手搭建 Node.js 服务器，推荐使用无需备案的 <a href="https://www.digitalocean.com/?refcode=eba02656eeb3">DigitalOcean(https://www.digitalocean.com/)</a></p>
+</div>
+
+
+  </div>
+</div>
+<div id="sidebar-mask"></div>
+
+
+
+
+
+
+<div style="display:none;">
+  <script src="//s95.cnzz.com/z_stat.php?id=1254020586&web_id=1254020586" language="JavaScript"></script>
+</div>
+
+<% include ./supports/footer%>

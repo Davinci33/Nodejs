@@ -1,0 +1,268 @@
+<% include ./supports/header%>
+
+
+
+<div id="main">
+  <div id="sidebar">
+
+  <div class="panel">
+    
+    <div class="header">
+      <span class="col_fade">个人信息</span>
+    </div>
+    <div class="inner">
+      <div class="user_card">
+  <div>
+    <a class="user_avatar" href="/user/Miker333">
+                <%console.log(userdata.usericon)%>
+
+            
+      <img src="/images/<%=userdata.usericon?userdata.usericon:nodeImg.jpg%>" title="Miker333">
+    </a>
+    <span class="user_name"><a class="dark" href="/user/Miker333"><%=userdata.username%></a></span>
+
+    <div class="board clearfix">
+      <div class="floor">
+        <span class="big">积分: 10 </span>
+      </div>
+    </div>
+    <div class="space clearfix"></div>
+    <span class="signature">
+        “
+            <%console.log(userdata.signature)%>
+            <%=userdata.signature%>
+        
+        ”
+    </span>
+  </div>
+</div>
+
+
+
+
+
+    </div>
+    
+  </div>
+
+  
+  <div class="panel">
+    <div class="inner">
+      <a href="/topic/create" id="create_topic_btn">
+        <span class="span-success">发布话题</span>
+      </a>
+    </div>
+  </div>
+  
+
+  
+    
+<div class="panel">
+  <div class="inner ads" dilpsky="" hidden="">
+
+    
+      
+      <a href="https://alinode.aliyun.com/?ref=cnode" target="_blank" class="banner sponsor_outlink" data-label="alinode">
+        <img src="//dn-cnode.qbox.me/Fn4D6BhOTz1IswvmzeZ1q7QW1ls_">
+      </a>
+    
+      
+        <div class="sep10"></div>
+      
+      <a href="http://www.ucloud.cn/site/active/gift.html?utm_source=cnodejs&amp;utm_medium=content_pic_pc&amp;utm_campaign=multicloud&amp;utm_content=gift&amp;ytag=cnodejs" target="_blank" class="banner sponsor_outlink" data-label="ucloud-banner">
+        <img src="//dn-cnode.qbox.me/FgQS-GQDfqwAD_v0NuhyYUOUk5MG">
+      </a>
+    
+      
+        <div class="sep10"></div>
+      
+      <a href="http://www.tingyun.com/tingyun_server.html" target="_blank" class="banner sponsor_outlink" data-label="tingyun">
+        <img src="//dn-cnode.qbox.me/FvGk14CRylsdmV2OhA2J63mqdB6-">
+      </a>
+    
+  </div>
+</div>
+
+  
+
+  
+
+  
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">友情社区</span>
+    </div>
+    <div class="inner">
+      <ol class="friendship-community">
+        <li>
+          <a href="https://ruby-china.org/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/ruby-china-20150529.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="http://golangtc.com/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/golangtc-logo.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="http://phphub.org/" target="_blank">
+            <img src="//o4j806krb.qnssl.com/public/images/phphub-logo.png">
+          </a>
+        </li>
+        <div class="sep10"></div>
+        <li>
+          <a href="https://testerhome.com/" target="_blank">
+            <img src="//dn-cnode.qbox.me/FjLUc7IJ2--DqS706etPQ1EGajxK">
+          </a>
+        </li>
+      </ol>
+    </div>
+  </div>
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">客户端二维码</span>
+    </div>
+    <div class="inner cnode-app-download">
+      <img src="//dn-cnode.qbox.me/FtG0YVgQ6iginiLpf9W4_ShjiLfU" width="200">
+      <br>
+      <a href="https://github.com/soliury/noder-react-native" target="_blank">客户端源码地址</a>
+    </div>
+  </div>
+
+</div>
+
+
+<div id="content">
+  <div class="panel">
+    <div class="header">
+      <ul class="breadcrumb">
+        <li><a href="/">主页</a><span class="divider">/</span></li>
+        <li class="active">设置</li>
+      </ul>
+    </div>
+    <div class="inner">
+      
+      
+      <form id="setting_form" class="form-horizontal" action="/users/settinged" method="post" enctype="multipart/form-data">
+        <div class="control-group">
+          <label class="control-label" for="name">用户名</label>
+
+          <div class="controls">
+            <input class="input-xlarge readonly" id="name" name="username" size="30" readonly="true" value="<%=userdata.username%>" type="text">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="email">电子邮件</label>
+
+          <div class="controls">
+            <input class="input-xlarge readonly" id="email" name="email" size="30" readonly="true" value="<%=userdata.email%>" type="text">
+
+            <p>同时决定了 Gravatar 头像</p>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="url">图像上传</label>
+
+          <div class="controls">
+            <input  type="file"  name="up_file" >
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label" for="github">GitHub</label>
+
+          <div class="controls">
+            <input class="input-xlarge" id="github" name="github" size="30" value="@<%=userdata.username%>" placeholder="@username" readonly="readonly" type="text">
+            <p>请通过 GitHub 登陆 CNode 来修改此处</p>
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="signature">个性签名</label>
+
+          <div class="controls">
+            <textarea class="input-xlarge" id="signature" name="signature" size="30">
+              <%=userdata.signature%>
+            </textarea>
+          </div>
+        </div>
+        <input id="action" name="action" value="change_setting" type="hidden">
+        <input name="_csrf" value="UbpXWzj0-iqUgV_SLsiqllAAL0f83Y3KZru8" type="hidden">
+
+        <div class="form-actions">
+          <input class="span-primary submit_btn" data-loading-text="保存中.." value="保存设置" type="submit">
+        </div>
+      </form>
+
+
+
+
+
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">更改密码</span>
+    </div>
+  <%if(errMsg.length){%>
+<div class="alert alert-danger" role="alert"><%= errMsg[0] %></div>
+<%}%>
+    <div class="inner">
+      <form id="change_pass_form" class="form-horizontal" action="/users/settings/fixCode" method="post">
+        <div class="control-group">
+          <label class="control-label" for="old_pass">当前密码</label>
+
+          <div class="controls">
+            <input class="input-xlarge" id="old_pass" name="old_pass" size="30" type="password">
+          </div>
+        </div>
+        <div class="control-group">
+          <label class="control-label" for="new_pass">新密码</label>
+
+          <div class="controls">
+            <input class="input-xlarge" id="new_pass" name="new_pass" size="30" type="password">
+          </div>
+        </div>
+        <input id="action" name="action" value="change_password" type="hidden">
+        <input name="_csrf" value="UbpXWzj0-iqUgV_SLsiqllAAL0f83Y3KZru8" type="hidden">
+
+        <div class="form-actions">
+          <input class="span-primary submit_btn" data-loading-text="更改中.." value="更改密码" type="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<% include ./supports/footer%>

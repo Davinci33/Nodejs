@@ -1,0 +1,274 @@
+
+
+<% include ./supports/header%>
+
+
+
+<div id="main">
+<div id="sidebar">
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">作者</span>
+    </div>
+    <div class="inner">
+      <div class="user_card">
+  <div>
+    <a class="user_avatar" href="/user/Miker333">
+      <img src="/images/<%=topicdata.userId.usericon%>" title="Miker333">
+    </a>
+    <span class="user_name"><a class="dark" href="/user/Miker333"><%=topicdata.userId.username%></a></span>
+
+    <div class="board clearfix">
+      <div class="floor">
+        <span class="big">积分:<%=topicdata.userId.golds%></span>
+      </div>
+    </div>
+    <div class="space clearfix"></div>
+    <span class="signature">
+        “
+        
+            <%=topicdata.userId.signature%>
+        
+        ”
+    </span>
+  </div>
+</div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+  
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">作者其它话题</span>
+    </div>
+    <div class="inner">
+      
+      <ul class="unstyled">
+        <li>
+  <div><a class="dark topic_title" href="/topic/599ad991f36051a45246c1fb" title="<%=topicdata.title%>"><%=topicdata.title%></a>
+  </div>
+</li>
+
+      </ul>
+      
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">无人回复的话题</span>
+    </div>
+    <div class="inner">
+      
+      <ul class="unstyled">
+        <li>
+  <div><a class="dark topic_title" href="/topic/599bee9cebaa046923a8268c" title="cnodejs-swift 发布">cnodejs-swift 发布</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/599bea08ebaa046923a8268a" title="制作一个命令行播放器">制作一个命令行播放器</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/599bafd24e3c4e5a7021b2fe" title="React版v2ex社区（react &amp; react-router &amp; axios &amp; antd ui）">React版v2ex社区（react &amp; react-router &amp; axios &amp; antd ui）</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/599ab0754e3c4e5a7021b2c6" title="基于vue + nuxt 打造 o2o教育商城系统（触屏版） 服务端渲染SSR">基于vue + nuxt 打造 o2o教育商城系统（触屏版） 服务端渲染SSR</a>
+  </div>
+</li>
+<li>
+  <div><a class="dark topic_title" href="/topic/599aadc2ebaa046923a8261c" title="关于http模块里的，request方法的一些疑问。">关于http模块里的，request方法的一些疑问。</a>
+  </div>
+</li>
+
+      </ul>
+      
+    </div>
+  </div>
+</div>
+
+
+
+<div id="content">
+  <div class="panel">
+    <div class="header topic_header">
+      <span class="topic_full_title">
+
+        
+
+
+        <%=topicdata.title%>
+      </span>
+      <div class="changes">
+        <span>
+          发布于<%=setTime(topicdata.createAt)%>
+        </span>
+        <span>
+          作者 <a href="/user/<%=topicdata.userId.username%>"><%=topicdata.userId.username%></a>
+        </span>
+        <span>
+          <%=topicdata.viewNum%>次浏览
+        </span>
+        
+        
+          <span> 来自 <%=check(topicdata.tab)%></span>
+          <%
+
+          function check(con){
+
+                var content;
+
+                switch(con){
+
+                  case "share":
+                  content = '分享';
+                  break;
+                  case "job":
+                  content = '招聘';
+                  break;
+                  case "dev":
+                  content = '客服端测试';
+                  break;
+                  case "ask":
+                  content = '问答';
+                  break;
+                }               
+                   return content;
+          }
+          %>
+
+        
+          <input class="span-common span-success pull-right collect_btn" value="收藏" action="collect" type="submit">
+        
+
+      </div>
+      
+      <div id="manage_topic">
+        
+          
+          <a href="/topic/599d33d0ebaa046923a826c6/edit">
+            <i class="fa fa-lg fa-pencil-square-o" title="编辑"></i></a>
+          <a href="javascript:;" data-id="599d33d0ebaa046923a826c6" class="delete_topic_btn">
+             <i class="fa fa-lg fa-trash" title="删除"></i></a>
+          
+        
+
+
+      </div>
+      
+    </div>
+    <div class="inner topic">
+
+      <div class="topic_content">
+        <div class="markdown-text">
+      <%-topicdata.content%>
+</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade"><%=topicdata.reply.length%>回复</span>
+    </div>
+
+
+
+
+
+    
+   <%replydata.forEach(function(item,index){%>
+    <div class="cell reply_area reply_item
+  " reply_id="599ad99dbae6f2ed6f7e4c01" reply_to_id="" id="599ad99dbae6f2ed6f7e4c01">
+  <div class="author_content">
+    <a href="/user/Miker333" class="user_avatar">
+      <img src="/images/<%=item.userId.usericon?item.userId.usericon:'nodeImg.jpg'%>" title="<%=item.userId.username%>"></a>
+
+    <div class="user_info">
+      <a class="dark reply_author" href="/user/Miker333"><%=item.userId.username%></a>
+      <a class="reply_time" href="#599ad99dbae6f2ed6f7e4c01"><%=item.floors%>楼<%=setTime(topicdata.createAt)%></a>
+      
+      
+    </div>
+    <div class="user_action">
+      <span>
+        <i class="fa up_btn           fa-thumbs-o-up invisible" title="喜欢"></i>
+        <span class="up-count">
+          
+        </span>
+      </span>
+      
+      <a href="/reply/599ad99dbae6f2ed6f7e4c01/edit" class="edit_reply_btn">
+        <i class="fa fa-pencil-square-o" title="编辑"></i>
+      </a>
+      <a href="javascript:void(0);" class="delete_reply_btn">
+        <i class="fa fa-trash" title="删除"></i>
+      </a>
+      
+      <span>
+        
+          <i class="fa fa-reply reply2_btn" title="回复"></i>
+        
+      </span>
+    </div>
+  </div>
+  <div class="reply_content from-Miker333">
+    <div class="markdown-text"><p><%-item.content%></p>
+</div>
+  </div>
+</div>
+<%})%>
+
+
+
+
+
+  </div>
+  <%if(userdata){%>
+  <div class="panel">
+    <div class="header">
+      <span class="col_fade">添加回复</span>
+    </div>
+    <div class="inner reply">
+      <form id="reply_form" action="/topic/reply" method="post">
+
+        <textarea required id="editor" name="content" style="min-height:300px" placeholder="请输入内容"></textarea>
+        <div class="editor_buttons">
+              <input class="span-primary submit_btn" data-loading-text="回复中.." value="回复" type="submit">
+            </div>
+        <input name="userId"  value="<%=userdata._id%>" type="hidden">
+
+        <input name="topicId" id="_csrf" value="<%=topicdata._id%>" type="hidden">
+      </form>
+    </div>
+  </div>
+  <%}%>
+</div>
+
+</div>
+
+
+
+<script>
+  // 实例化编辑器 -- 该位置的editor就是上面的文本域的id
+  var ue = UE.getEditor('editor');
+</script>
+
+
+
+
+<% include ./supports/footer%>
+
+
+
+
+
+
